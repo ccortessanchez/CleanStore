@@ -13,7 +13,7 @@
         <scene sceneID="MJ6-ab-Cop">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecc-f5-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="p59-sT-2cp" sceneMemberID="viewController">
+                <tableViewController id="p59-sT-2cp" customClass="CreateOrderViewController" customModule="CleanStore" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cgr-SZ-ydT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,7 +388,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZp-Ny-LoB">
-                                                    <rect key="frame" x="102" y="8" width="97" height="30"/>
+                                                    <rect key="frame" x="102" y="7" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -502,6 +502,45 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Create Order" id="1cg-OW-EQf"/>
+                    <connections>
+                        <outlet property="billingAddressCityTextField" destination="eSS-mJ-60E" id="dAY-ai-YEx"/>
+                        <outlet property="billingAddressStateTextField" destination="FlI-C6-Q2A" id="BLZ-xp-Efz"/>
+                        <outlet property="billingAddressStreet1TextField" destination="gZp-Ny-LoB" id="bPe-e1-Go5"/>
+                        <outlet property="billingAddressStreet2TextField" destination="V7S-eL-rw9" id="Qjz-EN-ekH"/>
+                        <outlet property="billingAddressZIPTextField" destination="xty-kY-ZU5" id="EqQ-dG-4tw"/>
+                        <outlet property="ccvTextField" destination="K02-Tj-lFO" id="2n8-Oz-j7E"/>
+                        <outlet property="creditCardNumberTextField" destination="Om1-ts-4JT" id="w1i-8S-UYE"/>
+                        <outlet property="emailTextField" destination="2QT-LB-R6B" id="m8d-Pl-Ua0"/>
+                        <outlet property="expirationDateTextField" destination="xvm-GA-2GT" id="DMh-Ii-VPl"/>
+                        <outlet property="firstNameTextField" destination="OA7-aH-bJf" id="ojk-5K-htx"/>
+                        <outlet property="lastNameTextField" destination="n75-ia-bXY" id="7V8-UX-l3d"/>
+                        <outlet property="phoneTextField" destination="lvY-BS-Fxh" id="DqR-zw-q3U"/>
+                        <outlet property="shipmentAddressCityTextField" destination="RVQ-T1-btl" id="64M-6o-BbS"/>
+                        <outlet property="shipmentAddressStateTextField" destination="nZ1-GF-MJ9" id="3aq-bd-mFf"/>
+                        <outlet property="shipmentAddressStreet1TextField" destination="4EI-bU-auu" id="Gmw-Qd-eHf"/>
+                        <outlet property="shipmentAddressStreet2TextField" destination="AvQ-Rf-vBQ" id="NGS-SK-aiC"/>
+                        <outlet property="shipmentAddressZIPTextField" destination="shR-ni-Joy" id="s4Q-eU-QMY"/>
+                        <outlet property="shippingMethodTextField" destination="zpP-uh-Cl8" id="ZsA-T1-akI"/>
+                        <outletCollection property="textFields" destination="OA7-aH-bJf" collectionClass="NSMutableArray" id="dhY-Dq-GET"/>
+                        <outletCollection property="textFields" destination="n75-ia-bXY" collectionClass="NSMutableArray" id="kmI-9N-X5H"/>
+                        <outletCollection property="textFields" destination="lvY-BS-Fxh" collectionClass="NSMutableArray" id="vxZ-vm-H4z"/>
+                        <outletCollection property="textFields" destination="2QT-LB-R6B" collectionClass="NSMutableArray" id="2yr-In-ecM"/>
+                        <outletCollection property="textFields" destination="4EI-bU-auu" collectionClass="NSMutableArray" id="Zom-td-giy"/>
+                        <outletCollection property="textFields" destination="AvQ-Rf-vBQ" collectionClass="NSMutableArray" id="J4h-jy-LyJ"/>
+                        <outletCollection property="textFields" destination="RVQ-T1-btl" collectionClass="NSMutableArray" id="NaZ-Lc-euT"/>
+                        <outletCollection property="textFields" destination="nZ1-GF-MJ9" collectionClass="NSMutableArray" id="YjH-vL-dnR"/>
+                        <outletCollection property="textFields" destination="shR-ni-Joy" collectionClass="NSMutableArray" id="fu5-fZ-zvb"/>
+                        <outletCollection property="textFields" destination="zpP-uh-Cl8" collectionClass="NSMutableArray" id="pwZ-V2-Hye"/>
+                        <outletCollection property="textFields" destination="Om1-ts-4JT" collectionClass="NSMutableArray" id="7je-E0-by8"/>
+                        <outletCollection property="textFields" destination="xvm-GA-2GT" collectionClass="NSMutableArray" id="tD7-ld-ez5"/>
+                        <outletCollection property="textFields" destination="K02-Tj-lFO" collectionClass="NSMutableArray" id="nd0-bF-Whd"/>
+                        <outletCollection property="textFields" destination="y98-U9-fVJ" collectionClass="NSMutableArray" id="vGO-0l-HJ2"/>
+                        <outletCollection property="textFields" destination="gZp-Ny-LoB" collectionClass="NSMutableArray" id="X7k-5q-9mT"/>
+                        <outletCollection property="textFields" destination="V7S-eL-rw9" collectionClass="NSMutableArray" id="kl9-hv-NeR"/>
+                        <outletCollection property="textFields" destination="eSS-mJ-60E" collectionClass="NSMutableArray" id="Who-5V-rko"/>
+                        <outletCollection property="textFields" destination="FlI-C6-Q2A" collectionClass="NSMutableArray" id="mJc-RF-X8h"/>
+                        <outletCollection property="textFields" destination="xty-kY-ZU5" collectionClass="NSMutableArray" id="hzj-Kh-cwj"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="485.60000000000002" y="98.50074962518741"/>

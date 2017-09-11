@@ -14,76 +14,111 @@ import UIKit
 
 protocol CreateOrderDisplayLogic: class
 {
-  func displaySomething(viewModel: CreateOrder.Something.ViewModel)
+    func displaySomething(viewModel: CreateOrder.Something.ViewModel)
 }
 
 class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic
 {
-  var interactor: CreateOrderBusinessLogic?
-  var router: (NSObjectProtocol & CreateOrderRoutingLogic & CreateOrderDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = CreateOrderInteractor()
-    let presenter = CreateOrderPresenter()
-    let router = CreateOrderRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: CreateOrderBusinessLogic?
+    var router: (NSObjectProtocol & CreateOrderRoutingLogic & CreateOrderDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = CreateOrder.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CreateOrder.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = CreateOrderInteractor()
+        let presenter = CreateOrderPresenter()
+        let router = CreateOrderRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+    }
+    
+    // MARK: Text fields
+    @IBOutlet var textFields: [UITextField]!
+    
+    // MARK: Shipping method
+    @IBOutlet weak var shippingMethodTextField: UITextField!
+    
+    // MARK: Expiration date
+    @IBOutlet weak var expirationDateTextField: UITextField!
+
+    
+    // MARK: Contact info
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    // MARK: Payment info
+    @IBOutlet weak var billingAddressStreet1TextField: UITextField!
+    @IBOutlet weak var billingAddressStreet2TextField: UITextField!
+    @IBOutlet weak var billingAddressCityTextField: UITextField!
+    @IBOutlet weak var billingAddressStateTextField: UITextField!
+    @IBOutlet weak var billingAddressZIPTextField: UITextField!
+    
+    @IBOutlet weak var creditCardNumberTextField: UITextField!
+    @IBOutlet weak var ccvTextField: UITextField!
+    
+    
+    // MARK: Shipping info
+    @IBOutlet weak var shipmentAddressStreet1TextField: UITextField!
+    @IBOutlet weak var shipmentAddressStreet2TextField: UITextField!
+    @IBOutlet weak var shipmentAddressCityTextField: UITextField!
+    @IBOutlet weak var shipmentAddressStateTextField: UITextField!
+    @IBOutlet weak var shipmentAddressZIPTextField: UITextField!
+    
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+    func doSomething()
+    {
+        let request = CreateOrder.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: CreateOrder.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
 }
