@@ -14,7 +14,7 @@ import UIKit
 
 protocol CreateOrderDisplayLogic: class
 {
-    //func displaySomething(viewModel: CreateOrder.Something.ViewModel)
+    func displayExpirationDate(viewModel: CreateOrder.FormatExpirationDate.ViewModel)
 }
 
 class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate
@@ -128,7 +128,12 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     @IBAction func expirationDatePickerValueChanged(_ sender: Any) {
         let date = expirationDatePicker.date
         let request = CreateOrder.FormatExpirationDate.Request(date: date)
-        interactor.formatExpirationDate(request)
+        interactor?.formatExpirationDate(request: request)
+    }
+    
+    func displayExpirationDate(viewModel: CreateOrder.FormatExpirationDate.ViewModel) {
+        let date = viewModel.date
+        expirationDateTextField.text = date
     }
     
     // MARK: Contact info
@@ -156,7 +161,7 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     @IBOutlet weak var shipmentAddressZIPTextField: UITextField!
     
     
-    // MARK: Do something
+    // MARK: Display expiration date
     
     //@IBOutlet weak var nameTextField: UITextField!
     

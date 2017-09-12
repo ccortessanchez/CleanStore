@@ -24,9 +24,11 @@ enum CreateOrder
     }
     struct Response
     {
+        var date: Date
     }
     struct ViewModel
     {
+        var date: String
     }
   }
 }
