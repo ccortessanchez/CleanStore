@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0A13227F1F67F63B0003B370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A53FD451F6694E500B49D52 /* Main.storyboard */; };
+		0A1322861F67F7800003B370 /* ListOrdersInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322821F67F7800003B370 /* ListOrdersInteractorTests.swift */; };
+		0A1322871F67F7800003B370 /* ListOrdersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322831F67F7800003B370 /* ListOrdersPresenterTests.swift */; };
+		0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */; };
+		0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */; };
 		0A3A5B0D1F67EE2E00A95DD5 /* CleanStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */; };
 		0A3A5B731F67F1CD00A95DD5 /* ListOrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6D1F67F1CD00A95DD5 /* ListOrdersInteractor.swift */; };
 		0A3A5B741F67F1CD00A95DD5 /* ListOrdersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6E1F67F1CD00A95DD5 /* ListOrdersModels.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1322821F67F7800003B370 /* ListOrdersInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersInteractorTests.swift; path = Scenes/ListOrders/ListOrdersInteractorTests.swift; sourceTree = "<group>"; };
+		0A1322831F67F7800003B370 /* ListOrdersPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersPresenterTests.swift; path = Scenes/ListOrders/ListOrdersPresenterTests.swift; sourceTree = "<group>"; };
+		0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersViewControllerTests.swift; path = Scenes/ListOrders/ListOrdersViewControllerTests.swift; sourceTree = "<group>"; };
+		0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersWorkerTests.swift; path = Scenes/ListOrders/ListOrdersWorkerTests.swift; sourceTree = "<group>"; };
 		0A3A5B0A1F67EE2E00A95DD5 /* CleanStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanStoreTests.swift; sourceTree = "<group>"; };
 		0A3A5B0E1F67EE2E00A95DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,9 +87,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1322801F67F75B0003B370 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0A1322811F67F7650003B370 /* ListOrders */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		0A1322811F67F7650003B370 /* ListOrders */ = {
+			isa = PBXGroup;
+			children = (
+				0A1322821F67F7800003B370 /* ListOrdersInteractorTests.swift */,
+				0A1322831F67F7800003B370 /* ListOrdersPresenterTests.swift */,
+				0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */,
+				0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */,
+			);
+			name = ListOrders;
+			sourceTree = "<group>";
+		};
 		0A3A5B0B1F67EE2E00A95DD5 /* CleanStoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A1322801F67F75B0003B370 /* Scenes */,
 				0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */,
 				0A3A5B0E1F67EE2E00A95DD5 /* Info.plist */,
 			);
@@ -261,6 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3A5B0D1F67EE2E00A95DD5 /* CleanStoreTests.swift in Sources */,
+				0A1322871F67F7800003B370 /* ListOrdersPresenterTests.swift in Sources */,
+				0A1322861F67F7800003B370 /* ListOrdersInteractorTests.swift in Sources */,
+				0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */,
+				0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
