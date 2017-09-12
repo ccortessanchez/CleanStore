@@ -75,6 +75,27 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     // MARK: Text fields
     @IBOutlet var textFields: [UITextField]!
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if let index = textFields.index(of: textField) {
+            if index < textFields.count - 1 {
+                let nextTextField = textFields[index + 1]
+                nextTextField.becomeFirstResponder()
+            }
+        }
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            for textField in textFields {
+                if textField.isDescendant(of: cell) {
+                    textField.becomeFirstResponder()
+                }
+            }
+        }
+    }
+    
     // MARK: Shipping method
     @IBOutlet weak var shippingMethodTextField: UITextField!
     @IBOutlet weak var shippingMethodPicker: UIPickerView!
