@@ -14,28 +14,30 @@ import UIKit
 
 protocol ListOrdersBusinessLogic
 {
-  func doSomething(request: ListOrders.Something.Request)
+    //func doSomething(request: ListOrders.Something.Request)
 }
 
 protocol ListOrdersDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class ListOrdersInteractor: ListOrdersBusinessLogic, ListOrdersDataStore
 {
-  var presenter: ListOrdersPresentationLogic?
-  var worker: ListOrdersWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ListOrders.Something.Request)
-  {
-    worker = ListOrdersWorker()
-    worker?.doSomeWork()
+    var presenter: ListOrdersPresentationLogic?
+    var worker: ListOrdersWorker?
+    //var name: String = ""
     
-    let response = ListOrders.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    /**
+    func doSomething(request: ListOrders.Something.Request)
+    {
+        worker = ListOrdersWorker()
+        worker?.doSomeWork()
+        
+        let response = ListOrders.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
+    **/
 }

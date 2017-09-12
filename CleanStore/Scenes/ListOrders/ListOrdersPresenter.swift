@@ -14,18 +14,19 @@ import UIKit
 
 protocol ListOrdersPresentationLogic
 {
-  func presentSomething(response: ListOrders.Something.Response)
+    //func presentSomething(response: ListOrders.Something.Response)
 }
 
 class ListOrdersPresenter: ListOrdersPresentationLogic
 {
-  weak var viewController: ListOrdersDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: ListOrders.Something.Response)
-  {
-    let viewModel = ListOrders.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: ListOrdersDisplayLogic?
+    
+    // MARK: Do something
+    /**
+    func presentSomething(response: ListOrders.Something.Response)
+    {
+        let viewModel = ListOrders.Something.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+    **/
 }
