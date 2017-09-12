@@ -12,6 +12,10 @@
 		0A1322871F67F7800003B370 /* ListOrdersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322831F67F7800003B370 /* ListOrdersPresenterTests.swift */; };
 		0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */; };
 		0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */; };
+		0A1322901F6809700003B370 /* OrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13228F1F6809700003B370 /* OrdersWorker.swift */; };
+		0A1322911F6809700003B370 /* OrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13228F1F6809700003B370 /* OrdersWorker.swift */; };
+		0A1322941F6809D10003B370 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322931F6809D10003B370 /* Order.swift */; };
+		0A1322951F6809D10003B370 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322931F6809D10003B370 /* Order.swift */; };
 		0A3A5B0D1F67EE2E00A95DD5 /* CleanStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */; };
 		0A3A5B731F67F1CD00A95DD5 /* ListOrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6D1F67F1CD00A95DD5 /* ListOrdersInteractor.swift */; };
 		0A3A5B741F67F1CD00A95DD5 /* ListOrdersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6E1F67F1CD00A95DD5 /* ListOrdersModels.swift */; };
@@ -46,6 +50,8 @@
 		0A1322831F67F7800003B370 /* ListOrdersPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersPresenterTests.swift; path = Scenes/ListOrders/ListOrdersPresenterTests.swift; sourceTree = "<group>"; };
 		0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersViewControllerTests.swift; path = Scenes/ListOrders/ListOrdersViewControllerTests.swift; sourceTree = "<group>"; };
 		0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListOrdersWorkerTests.swift; path = Scenes/ListOrders/ListOrdersWorkerTests.swift; sourceTree = "<group>"; };
+		0A13228F1F6809700003B370 /* OrdersWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersWorker.swift; path = Workers/OrdersWorker.swift; sourceTree = "<group>"; };
+		0A1322931F6809D10003B370 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Models/Order.swift; sourceTree = "<group>"; };
 		0A3A5B0A1F67EE2E00A95DD5 /* CleanStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanStoreTests.swift; sourceTree = "<group>"; };
 		0A3A5B0E1F67EE2E00A95DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +112,22 @@
 			name = ListOrders;
 			sourceTree = "<group>";
 		};
+		0A13228E1F6809270003B370 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				0A13228F1F6809700003B370 /* OrdersWorker.swift */,
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
+		0A1322921F6809B10003B370 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A1322931F6809D10003B370 /* Order.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		0A3A5B0B1F67EE2E00A95DD5 /* CleanStoreTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +172,8 @@
 		0A53FD401F6694E500B49D52 /* CleanStore */ = {
 			isa = PBXGroup;
 			children = (
+				0A1322921F6809B10003B370 /* Models */,
+				0A13228E1F6809270003B370 /* Workers */,
 				0A53FD531F6694FE00B49D52 /* Scenes */,
 				0A53FD411F6694E500B49D52 /* AppDelegate.swift */,
 				0A53FD451F6694E500B49D52 /* Main.storyboard */,
@@ -292,7 +316,9 @@
 				0A1322871F67F7800003B370 /* ListOrdersPresenterTests.swift in Sources */,
 				0A1322861F67F7800003B370 /* ListOrdersInteractorTests.swift in Sources */,
 				0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */,
+				0A1322911F6809700003B370 /* OrdersWorker.swift in Sources */,
 				0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */,
+				0A1322951F6809D10003B370 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +338,8 @@
 				0A3A5B771F67F1CD00A95DD5 /* ListOrdersViewController.swift in Sources */,
 				0A3A5B731F67F1CD00A95DD5 /* ListOrdersInteractor.swift in Sources */,
 				0A3A5B781F67F1CD00A95DD5 /* ListOrdersWorker.swift in Sources */,
+				0A1322941F6809D10003B370 /* Order.swift in Sources */,
+				0A1322901F6809700003B370 /* OrdersWorker.swift in Sources */,
 				0A3A5B751F67F1CD00A95DD5 /* ListOrdersPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

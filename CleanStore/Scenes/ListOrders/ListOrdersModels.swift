@@ -23,6 +23,7 @@ enum ListOrders
     }
     struct Response
     {
+        var order: [Order]
     }
     struct ViewModel
     {
