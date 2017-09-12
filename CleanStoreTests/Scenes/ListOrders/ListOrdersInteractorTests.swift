@@ -62,17 +62,20 @@ class ListOrdersInteractorTests: XCTestCase
     
     // MARK: Tests
     
-    func testDoSomething()
+    func testFetchOrdersShouldAskOrdersWorkerToFetchOrdersAndPresenterToFormatResult()
     {
         // Given
-        //let spy = ListOrdersPresentationLogicSpy()
-        //sut.presenter = spy
-        //let request = ListOrders.Something.Request()
+        let listOrdersPresentationLogicSpy = ListOrdersPresentationLogicSpy()
+        sut.presenter = listOrdersPresentationLogicSpy
+        let ordersWorkerSpy = OrdersWorkerSpy(ordersStore: OrdersMemStore())
+        sut.ordersWorker = ordersWorkerSpy
+        let request = ListOrders.FetchOrders.Request()
         
         // When
-        //sut.doSomething(request: request)
+        sut.fetchOrders(request: request)
         
         // Then
-        //XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
+        XCTAssert(ordersWorkerSpy.fetchOrdersCalled, "FetchOrders() should ask OrdersWorker to fetch orders")
+        XCTAssert(listOrdersPresentationLogicSpy.presentFetchedOrdersCalled, "FetchOrders() should ask presenter to format orders result")
     }
 }

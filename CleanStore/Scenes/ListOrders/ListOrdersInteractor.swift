@@ -20,17 +20,25 @@ protocol ListOrdersBusinessLogic
 
 protocol ListOrdersDataStore
 {
-    //var name: String { get set }
+    var orders: [Order]? { get }
 }
 
 class ListOrdersInteractor: ListOrdersBusinessLogic, ListOrdersDataStore
 {
+
     var presenter: ListOrdersPresentationLogic?
+    var ordersWorker = OrdersWorker()
     var worker: ListOrdersWorker?
-    //var name: String = ""
+    
+    var orders: [Order]?
     
     // MARK: Fetch orders
     
     func fetchOrders(request: ListOrders.FetchOrders.Request) {
+        ordersWorker.fetchOrders { (orders) -> Void in
+            self.orders = orders
+            let response = ListOrders.FetchOrders.Response(orders: orders)
+            self.presenter?.presentFetchedOrders(response: response)
+        }
     }
 }

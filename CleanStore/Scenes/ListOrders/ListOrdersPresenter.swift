@@ -15,18 +15,16 @@ import UIKit
 protocol ListOrdersPresentationLogic
 {
     //func presentSomething(response: ListOrders.Something.Response)
+    func presentFetchedOrders(response: ListOrders.FetchOrders.Response)
 }
 
 class ListOrdersPresenter: ListOrdersPresentationLogic
 {
     weak var viewController: ListOrdersDisplayLogic?
+    var ordersWorker = OrdersWorker()
     
-    // MARK: Do something
-    /**
-    func presentSomething(response: ListOrders.Something.Response)
-    {
-        let viewModel = ListOrders.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    // MARK: Present fetcher orders
+    
+    func presentFetchedOrders(response: ListOrders.FetchOrders.Response) {
     }
-    **/
 }
