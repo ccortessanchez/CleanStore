@@ -69,7 +69,7 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        configurePickers()
     }
     
     // MARK: Text fields
@@ -99,6 +99,26 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     // MARK: Shipping method
     @IBOutlet weak var shippingMethodTextField: UITextField!
     @IBOutlet weak var shippingMethodPicker: UIPickerView!
+    
+    func configurePickers() {
+        shippingMethodTextField.inputView = shippingMethodPicker
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return interactor!.shippingMethods.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return interactor?.shippingMethods[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        shippingMethodTextField.text = interactor?.shippingMethods[row]
+    }
     
     // MARK: Expiration date
     @IBOutlet weak var expirationDateTextField: UITextField!
