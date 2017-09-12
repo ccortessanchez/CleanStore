@@ -17,7 +17,7 @@ protocol CreateOrderDisplayLogic: class
     func displaySomething(viewModel: CreateOrder.Something.ViewModel)
 }
 
-class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic
+class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate
 {
     var interactor: CreateOrderBusinessLogic?
     var router: (NSObjectProtocol & CreateOrderRoutingLogic & CreateOrderDataPassing)?
@@ -77,10 +77,11 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic
     
     // MARK: Shipping method
     @IBOutlet weak var shippingMethodTextField: UITextField!
+    @IBOutlet weak var shippingMethodPicker: UIPickerView!
     
     // MARK: Expiration date
     @IBOutlet weak var expirationDateTextField: UITextField!
-
+    @IBOutlet weak var expirationDatePickerValueChanged: UIDatePicker!
     
     // MARK: Contact info
     @IBOutlet weak var firstNameTextField: UITextField!
