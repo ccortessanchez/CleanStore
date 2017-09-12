@@ -14,7 +14,7 @@ import UIKit
 
 protocol ListOrdersDisplayLogic: class
 {
-    func displaySomething(viewModel: ListOrders.Something.ViewModel)
+    //func displaySomething(viewModel: ListOrders.Something.ViewModel)
 }
 
 class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
@@ -69,7 +69,7 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        //doSomething()
     }
     
     // MARK: Do something

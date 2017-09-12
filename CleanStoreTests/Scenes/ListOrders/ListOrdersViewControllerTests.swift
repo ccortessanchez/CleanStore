@@ -54,37 +54,37 @@ class ListOrdersViewControllerTests: XCTestCase
   
   class ListOrdersBusinessLogicSpy: ListOrdersBusinessLogic
   {
-    var doSomethingCalled = false
+    var fetchOrdersCalled = false
     
-    func doSomething(request: ListOrders.Something.Request)
+    func fetchOrders(request: ListOrders.FetchOrders.Request)
     {
-      doSomethingCalled = true
+      fetchOrdersCalled = true
     }
   }
   
   // MARK: Tests
   
-  func testShouldDoSomethingWhenViewIsLoaded()
+  func testShouldFetchOrdersWhenViewIsLoaded()
   {
     // Given
-    let spy = ListOrdersBusinessLogicSpy()
-    sut.interactor = spy
+    let listOrdersBussinessLogicSpy = ListOrdersBusinessLogicSpy()
+    sut.interactor = listOrdersBussinessLogicSpy
     
     // When
     loadView()
     
     // Then
-    XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+    XCTAssertTrue(listOrdersBussinessLogicSpy.fetchOrdersCalled, "Should fetch orders when the view is loaded")
   }
   
   func testDisplaySomething()
   {
     // Given
-    let viewModel = ListOrders.Something.ViewModel()
+    //let viewModel = ListOrders.Something.ViewModel()
     
     // When
-    loadView()
-    sut.displaySomething(viewModel: viewModel)
+    //loadView()
+    //sut.displaySomething(viewModel: viewModel)
     
     // Then
     //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")

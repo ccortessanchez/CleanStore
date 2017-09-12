@@ -44,11 +44,12 @@ class ListOrdersInteractorTests: XCTestCase
   class ListOrdersPresentationLogicSpy: ListOrdersPresentationLogic
   {
     var presentSomethingCalled = false
-    
+    /**
     func presentSomething(response: ListOrders.Something.Response)
     {
       presentSomethingCalled = true
     }
+    **/
   }
   
   // MARK: Tests
@@ -56,14 +57,14 @@ class ListOrdersInteractorTests: XCTestCase
   func testDoSomething()
   {
     // Given
-    let spy = ListOrdersPresentationLogicSpy()
-    sut.presenter = spy
-    let request = ListOrders.Something.Request()
+    //let spy = ListOrdersPresentationLogicSpy()
+    //sut.presenter = spy
+    //let request = ListOrders.Something.Request()
     
     // When
-    sut.doSomething(request: request)
+    //sut.doSomething(request: request)
     
     // Then
-    XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
+    //XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
   }
 }
