@@ -81,7 +81,10 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     
     // MARK: Expiration date
     @IBOutlet weak var expirationDateTextField: UITextField!
-    @IBOutlet weak var expirationDatePickerValueChanged: UIDatePicker!
+    @IBOutlet weak var expirationDatePicker: UIDatePicker!
+    
+    @IBAction func expirationDatePickerValueChanged(_ sender: Any) {
+    }
     
     // MARK: Contact info
     @IBOutlet weak var firstNameTextField: UITextField!

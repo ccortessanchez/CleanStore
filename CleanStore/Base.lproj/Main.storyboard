@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5XJ-SO-ENY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -327,6 +327,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="526894082.65651298">
                                                         <!--2017-09-12 07:28:02 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="expirationDatePickerValueChanged:" destination="p59-sT-2cp" eventType="valueChanged" id="cUT-pN-fP0"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -525,7 +528,7 @@
                         <outlet property="ccvTextField" destination="K02-Tj-lFO" id="2n8-Oz-j7E"/>
                         <outlet property="creditCardNumberTextField" destination="Om1-ts-4JT" id="w1i-8S-UYE"/>
                         <outlet property="emailTextField" destination="2QT-LB-R6B" id="m8d-Pl-Ua0"/>
-                        <outlet property="expirationDatePickerValueChanged" destination="7YG-it-qT9" id="oSQ-cL-hhf"/>
+                        <outlet property="expirationDatePicker" destination="7YG-it-qT9" id="C9U-hZ-XWA"/>
                         <outlet property="expirationDateTextField" destination="xvm-GA-2GT" id="DMh-Ii-VPl"/>
                         <outlet property="firstNameTextField" destination="OA7-aH-bJf" id="ojk-5K-htx"/>
                         <outlet property="lastNameTextField" destination="n75-ia-bXY" id="7V8-UX-l3d"/>
