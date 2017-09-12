@@ -14,7 +14,7 @@ import UIKit
 
 protocol CreateOrderDisplayLogic: class
 {
-    func displaySomething(viewModel: CreateOrder.Something.ViewModel)
+    //func displaySomething(viewModel: CreateOrder.Something.ViewModel)
 }
 
 class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate
@@ -102,6 +102,7 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     
     func configurePickers() {
         shippingMethodTextField.inputView = shippingMethodPicker
+        expirationDateTextField.inputView = expirationDatePicker
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -125,6 +126,9 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     @IBOutlet weak var expirationDatePicker: UIDatePicker!
     
     @IBAction func expirationDatePickerValueChanged(_ sender: Any) {
+        let date = expirationDatePicker.date
+        let request = CreateOrder.FormatExpirationDate.Request(date: date)
+        interactor.formatExpirationDate(request)
     }
     
     // MARK: Contact info
@@ -156,6 +160,7 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     
     //@IBOutlet weak var nameTextField: UITextField!
     
+    /**
     func doSomething()
     {
         let request = CreateOrder.Something.Request()
@@ -166,4 +171,5 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     {
         //nameTextField.text = viewModel.name
     }
+    **/
 }

@@ -16,10 +16,11 @@ enum CreateOrder
 {
   // MARK: Use cases
   
-  enum Something
+  enum FormatExpirationDate
   {
     struct Request
     {
+        var date: Date
     }
     struct Response
     {

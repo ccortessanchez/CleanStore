@@ -14,7 +14,7 @@ import UIKit
 
 protocol CreateOrderBusinessLogic
 {
-    func doSomething(request: CreateOrder.Something.Request)
+    func formatExpirationDate(request: CreateOrder.FormatExpirationDate.Request)
     var shippingMethods: [String] { get }
 }
 
@@ -36,13 +36,8 @@ class CreateOrderInteractor: CreateOrderBusinessLogic, CreateOrderDataStore
     ]
     
     // MARK: Do something
-    
-    func doSomething(request: CreateOrder.Something.Request)
-    {
-        worker = CreateOrderWorker()
-        worker?.doSomeWork()
-        
-        let response = CreateOrder.Something.Response()
-        presenter?.presentSomething(response: response)
+    func formatExpirationDate(request: CreateOrder.FormatExpirationDate.Request) {
+        let response = CreateOrder.FormatExpirationDate.Response(date: request.date)
+        presenter.presentExpirationDate(response: response)
     }
 }
