@@ -584,6 +584,7 @@
                         <outlet property="ccvTextField" destination="K02-Tj-lFO" id="2n8-Oz-j7E"/>
                         <outlet property="creditCardNumberTextField" destination="Om1-ts-4JT" id="w1i-8S-UYE"/>
                         <outlet property="emailTextField" destination="2QT-LB-R6B" id="m8d-Pl-Ua0"/>
+                        <outlet property="expirationDatePicker" destination="HFc-uw-HCG" id="v7R-LR-74I"/>
                         <outlet property="expirationDateTextField" destination="xvm-GA-2GT" id="DMh-Ii-VPl"/>
                         <outlet property="firstNameTextField" destination="OA7-aH-bJf" id="ojk-5K-htx"/>
                         <outlet property="lastNameTextField" destination="n75-ia-bXY" id="7V8-UX-l3d"/>
@@ -593,6 +594,7 @@
                         <outlet property="shipmentAddressStreet1TextField" destination="4EI-bU-auu" id="Gmw-Qd-eHf"/>
                         <outlet property="shipmentAddressStreet2TextField" destination="AvQ-Rf-vBQ" id="NGS-SK-aiC"/>
                         <outlet property="shipmentAddressZIPTextField" destination="shR-ni-Joy" id="s4Q-eU-QMY"/>
+                        <outlet property="shippingMethodPicker" destination="tMB-Ek-hnH" id="bP9-tF-wfi"/>
                         <outlet property="shippingMethodTextField" destination="zpP-uh-Cl8" id="ZsA-T1-akI"/>
                         <outletCollection property="textFields" destination="OA7-aH-bJf" collectionClass="NSMutableArray" id="dhY-Dq-GET"/>
                         <outletCollection property="textFields" destination="n75-ia-bXY" collectionClass="NSMutableArray" id="kmI-9N-X5H"/>
@@ -615,8 +617,22 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecc-f5-emr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="HFc-uw-HCG">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="526905989.15371001">
+                        <!--2017-09-12 10:46:29 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="expirationDatePickerValueChanged:" destination="p59-sT-2cp" eventType="valueChanged" id="pvM-5n-C8R"/>
+                    </connections>
+                </datePicker>
+                <pickerView contentMode="scaleToFill" id="tMB-Ek-hnH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </pickerView>
             </objects>
-            <point key="canvasLocation" x="485.60000000000002" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1014" y="-93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K3i-Kt-u5M">
@@ -633,6 +649,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwr-PV-rJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-657" y="100"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="d66-9Q-YLJ">
+            <objects>
+                <tableViewController id="tGX-IN-YEB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G1U-hz-9Iv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y15-9C-3cM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y15-9C-3cM" id="SxW-Zz-M2c">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tGX-IN-YEB" id="zao-4O-mXi"/>
+                            <outlet property="delegate" destination="tGX-IN-YEB" id="XRm-bi-qS2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHN-Ch-DN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

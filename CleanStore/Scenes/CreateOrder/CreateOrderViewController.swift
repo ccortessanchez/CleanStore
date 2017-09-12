@@ -98,7 +98,7 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     
     // MARK: Shipping method
     @IBOutlet weak var shippingMethodTextField: UITextField!
-    @IBOutlet weak var shippingMethodPicker: UIPickerView!
+    @IBOutlet var shippingMethodPicker: UIPickerView!
     
     func configurePickers() {
         shippingMethodTextField.inputView = shippingMethodPicker
@@ -123,13 +123,14 @@ class CreateOrderViewController: UITableViewController, CreateOrderDisplayLogic,
     
     // MARK: Expiration date
     @IBOutlet weak var expirationDateTextField: UITextField!
-    @IBOutlet weak var expirationDatePicker: UIDatePicker!
+    @IBOutlet var expirationDatePicker: UIDatePicker!
     
     @IBAction func expirationDatePickerValueChanged(_ sender: Any) {
         let date = expirationDatePicker.date
         let request = CreateOrder.FormatExpirationDate.Request(date: date)
         interactor?.formatExpirationDate(request: request)
     }
+    
     
     func displayExpirationDate(viewModel: CreateOrder.FormatExpirationDate.ViewModel) {
         let date = viewModel.date
