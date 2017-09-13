@@ -8,7 +8,19 @@
 
 import Foundation
 
+protocol OrdersStoreProtocol {
+    func fetchOrders(completionHandler: ([Order]) -> Void)
+}
+
+
 class OrdersWorker {
+    
+    var ordersStore: OrdersStoreProtocol
+    
+    init(ordersStore: OrdersStoreProtocol) {
+        self.ordersStore = ordersStore
+    }
+    
     func fetchOrders(completionHandler: ([Order]) -> Void) {
         completionHandler([])
     }
