@@ -13,9 +13,7 @@
 		0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322841F67F7800003B370 /* ListOrdersViewControllerTests.swift */; };
 		0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322851F67F7800003B370 /* ListOrdersWorkerTests.swift */; };
 		0A1322901F6809700003B370 /* OrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13228F1F6809700003B370 /* OrdersWorker.swift */; };
-		0A1322911F6809700003B370 /* OrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A13228F1F6809700003B370 /* OrdersWorker.swift */; };
 		0A1322941F6809D10003B370 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322931F6809D10003B370 /* Order.swift */; };
-		0A1322951F6809D10003B370 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1322931F6809D10003B370 /* Order.swift */; };
 		0A3A5B0D1F67EE2E00A95DD5 /* CleanStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B0C1F67EE2E00A95DD5 /* CleanStoreTests.swift */; };
 		0A3A5B731F67F1CD00A95DD5 /* ListOrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6D1F67F1CD00A95DD5 /* ListOrdersInteractor.swift */; };
 		0A3A5B741F67F1CD00A95DD5 /* ListOrdersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A5B6E1F67F1CD00A95DD5 /* ListOrdersModels.swift */; };
@@ -316,9 +314,7 @@
 				0A1322871F67F7800003B370 /* ListOrdersPresenterTests.swift in Sources */,
 				0A1322861F67F7800003B370 /* ListOrdersInteractorTests.swift in Sources */,
 				0A1322891F67F7800003B370 /* ListOrdersWorkerTests.swift in Sources */,
-				0A1322911F6809700003B370 /* OrdersWorker.swift in Sources */,
 				0A1322881F67F7800003B370 /* ListOrdersViewControllerTests.swift in Sources */,
-				0A1322951F6809D10003B370 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,10 +51,11 @@ class ListOrdersInteractorTests: XCTestCase
         }
     }
     
-    class OrdersWorkerSpy: OrdersWorker {
+    class OrdersWorkerSpy: OrdersWorker
+    {
         var fetchOrdersCalled = false
         
-        override func fetchOrders(completionHandler: (_ orders: [Order]) -> Void) {
+        override func fetchOrders(completionHandler: ([Order]) -> Void) {
             fetchOrdersCalled = true
             completionHandler([])
         }
@@ -67,7 +68,7 @@ class ListOrdersInteractorTests: XCTestCase
         // Given
         let listOrdersPresentationLogicSpy = ListOrdersPresentationLogicSpy()
         sut.presenter = listOrdersPresentationLogicSpy
-        let ordersWorkerSpy = OrdersWorkerSpy(ordersStore: OrdersMemStore())
+        let ordersWorkerSpy = OrdersWorkerSpy()
         sut.ordersWorker = ordersWorkerSpy
         let request = ListOrders.FetchOrders.Request()
         

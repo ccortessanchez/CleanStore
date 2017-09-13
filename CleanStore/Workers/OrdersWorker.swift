@@ -9,7 +9,7 @@
 import Foundation
 
 class OrdersWorker {
-    func fetchOrders(completionHandler: (_ orders: [Order]) -> Void) {
+    func fetchOrders(completionHandler: ([Order]) -> Void) {
         completionHandler([])
     }
 }
