@@ -68,7 +68,7 @@ class ListOrdersInteractorTests: XCTestCase
         // Given
         let listOrdersPresentationLogicSpy = ListOrdersPresentationLogicSpy()
         sut.presenter = listOrdersPresentationLogicSpy
-        let ordersWorkerSpy = OrdersWorkerSpy()
+        let ordersWorkerSpy = OrdersWorkerSpy(ordersStore: OrdersMemStore())
         sut.ordersWorker = ordersWorkerSpy
         let request = ListOrders.FetchOrders.Request()
         

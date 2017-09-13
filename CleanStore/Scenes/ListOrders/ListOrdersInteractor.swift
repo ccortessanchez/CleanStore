@@ -27,7 +27,7 @@ class ListOrdersInteractor: ListOrdersBusinessLogic, ListOrdersDataStore
 {
 
     var presenter: ListOrdersPresentationLogic?
-    var ordersWorker = OrdersWorker()
+    var ordersWorker = OrdersWorker(ordersStore: OrdersMemStore())
     var worker: ListOrdersWorker?
     
     var orders: [Order]?

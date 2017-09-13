@@ -21,7 +21,7 @@ protocol ListOrdersPresentationLogic
 class ListOrdersPresenter: ListOrdersPresentationLogic
 {
     weak var viewController: ListOrdersDisplayLogic?
-    var ordersWorker = OrdersWorker()
+    var ordersWorker = OrdersWorker(ordersStore: OrdersMemStore())
     
     // MARK: Present fetcher orders
     
