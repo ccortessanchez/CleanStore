@@ -31,6 +31,9 @@
 		0A53FD471F6694E500B49D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A53FD451F6694E500B49D52 /* Main.storyboard */; };
 		0A53FD491F6694E500B49D52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A53FD481F6694E500B49D52 /* Assets.xcassets */; };
 		0A53FD4C1F6694E500B49D52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A53FD4A1F6694E500B49D52 /* LaunchScreen.storyboard */; };
+		0AA93A551F69806200B2256B /* OrdersMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA93A541F69806200B2256B /* OrdersMemStore.swift */; };
+		0AA93A571F6980AC00B2256B /* OrdersCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA93A561F6980AC00B2256B /* OrdersCoreDataStore.swift */; };
+		0AA93A591F6980C000B2256B /* OrdersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA93A581F6980C000B2256B /* OrdersAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		0A53FD481F6694E500B49D52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A53FD4B1F6694E500B49D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A53FD4D1F6694E500B49D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA93A541F69806200B2256B /* OrdersMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersMemStore.swift; path = Services/OrdersMemStore.swift; sourceTree = "<group>"; };
+		0AA93A561F6980AC00B2256B /* OrdersCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersCoreDataStore.swift; path = Services/OrdersCoreDataStore.swift; sourceTree = "<group>"; };
+		0AA93A581F6980C000B2256B /* OrdersAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersAPI.swift; path = Services/OrdersAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		0A53FD401F6694E500B49D52 /* CleanStore */ = {
 			isa = PBXGroup;
 			children = (
+				0AA93A531F69804000B2256B /* Services */,
 				0A1322921F6809B10003B370 /* Models */,
 				0A13228E1F6809270003B370 /* Workers */,
 				0A53FD531F6694FE00B49D52 /* Scenes */,
@@ -202,6 +209,16 @@
 				0A3A5B7E1F67F1DA00A95DD5 /* CreateOrderWorker.swift */,
 			);
 			name = CreateOrder;
+			sourceTree = "<group>";
+		};
+		0AA93A531F69804000B2256B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0AA93A541F69806200B2256B /* OrdersMemStore.swift */,
+				0AA93A561F6980AC00B2256B /* OrdersCoreDataStore.swift */,
+				0AA93A581F6980C000B2256B /* OrdersAPI.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,12 +343,15 @@
 				0A3A5B831F67F1DA00A95DD5 /* CreateOrderViewController.swift in Sources */,
 				0A3A5B7F1F67F1DA00A95DD5 /* CreateOrderInteractor.swift in Sources */,
 				0A53FD421F6694E500B49D52 /* AppDelegate.swift in Sources */,
+				0AA93A571F6980AC00B2256B /* OrdersCoreDataStore.swift in Sources */,
 				0A3A5B801F67F1DA00A95DD5 /* CreateOrderModels.swift in Sources */,
 				0A3A5B821F67F1DA00A95DD5 /* CreateOrderRouter.swift in Sources */,
+				0AA93A591F6980C000B2256B /* OrdersAPI.swift in Sources */,
 				0A3A5B761F67F1CD00A95DD5 /* ListOrdersRouter.swift in Sources */,
 				0A3A5B841F67F1DA00A95DD5 /* CreateOrderWorker.swift in Sources */,
 				0A3A5B811F67F1DA00A95DD5 /* CreateOrderPresenter.swift in Sources */,
 				0A3A5B771F67F1CD00A95DD5 /* ListOrdersViewController.swift in Sources */,
+				0AA93A551F69806200B2256B /* OrdersMemStore.swift in Sources */,
 				0A3A5B731F67F1CD00A95DD5 /* ListOrdersInteractor.swift in Sources */,
 				0A3A5B781F67F1CD00A95DD5 /* ListOrdersWorker.swift in Sources */,
 				0A1322941F6809D10003B370 /* Order.swift in Sources */,
