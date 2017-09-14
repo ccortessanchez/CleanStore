@@ -86,16 +86,18 @@ class ListOrdersViewControllerTests: XCTestCase
         XCTAssertTrue(listOrdersBussinessLogicSpy.fetchOrdersCalled, "Should fetch orders when the view is loaded")
     }
     
-    func testDisplaySomething()
+    func testShouldDisplayFetchedOrders()
     {
         // Given
-        //let viewModel = ListOrders.Something.ViewModel()
+        let tableViewSpy = TableViewSpy()
+        sut.tableView = tableViewSpy
+        let displayedOrders = [ListOrders.FetchOrders.ViewModel.DisplayedOrder(id: "abc123", date: "6/29/07", email: "amy.apple@clean-swift.com", name: "Amy Apple", total: "$1.23")]
+        let viewModel = ListOrders.FetchOrders.ViewModel(displayedOrders: displayedOrders)
         
         // When
-        //loadView()
-        //sut.displaySomething(viewModel: viewModel)
+        sut.displayFetchedOrders(viewModel: viewModel)
         
         // Then
-        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
+        XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
     }
 }
