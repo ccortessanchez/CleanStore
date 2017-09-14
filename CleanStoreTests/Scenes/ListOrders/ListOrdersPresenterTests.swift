@@ -57,17 +57,42 @@ class ListOrdersPresenterTests: XCTestCase
     
     // MARK: Tests
     
-    func testPresentSomething()
+    func testPresentFetchedOrdersShouldFormatFetchedOrdersForDisplay()
     {
         // Given
-        //let spy = ListOrdersDisplayLogicSpy()
-        //sut.viewController = spy
-        //let response = ListOrders.Something.Response()
+        let listOrdersDisplayLogicSpy = ListOrdersDisplayLogicSpy()
+        sut.viewController = listOrdersDisplayLogicSpy
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2007
+        dateComponents.month = 6
+        dateComponents.day = 29
+        let date = Calendar.current.date(from: dateComponents)!
+        
+        let orders = [Order(firstName: "Amy", lastName: "Apple", email: "amy.apple@clean-swift.com", id: "abc123", date: date, total: NSDecimalNumber(string: "1.23"))]
+        let response = ListOrders.FetchOrders.Response(orders: orders)
         
         // When
-        //sut.presentSomething(response: response)
+        sut.presentFetchedOrders(response: response)
         
         // Then
-        //XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
+        let displayedOrders = listOrdersDisplayLogicSpy.viewModel.displayedOrders
+        for displayedOrder in displayedOrders {
+            XCTAssertEqual(displayedOrder.id, "abc123", "Presenting fetched orders should properly format order ID")
+            XCTAssertEqual(displayedOrder.date, "6/29/07", "Presenting fetched orders should properly format order date")
+            XCTAssertEqual(displayedOrder.email, "amy.apple@clean-swift.com", "Presenting fetched orders should properly format email")
+            XCTAssertEqual(displayedOrder.name, "Amy Apple", "Presenting fetched orders should properly format name")
+            XCTAssertEqual(displayedOrder.total, "$1.23", "Presenting fetched orders should properly format total")
+        }
+    }
+    
+    func testPresentFetchedOrdersShouldAskViewControllerToDisplayFetchedOrders() {
+        // Given
+        
+        
+        // When
+        
+        
+        // Then
     }
 }
