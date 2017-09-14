@@ -88,11 +88,15 @@ class ListOrdersPresenterTests: XCTestCase
     
     func testPresentFetchedOrdersShouldAskViewControllerToDisplayFetchedOrders() {
         // Given
-        
+        let listOrdersDisplayLogicSpy = ListOrdersDisplayLogicSpy()
+        sut.viewController = listOrdersDisplayLogicSpy
         
         // When
-        
+        let orders = [Order(firstName: "Amy", lastName: "Apple", email: "amy.apple@clean-swift.com", id: "abc123", date: Date(), total: NSDecimalNumber(string: "1.23"))]
+        let response = ListOrders.FetchOrders.Response(orders: orders)
         
         // Then
+        sut.presentFetchedOrders(response: response)
+        XCTAssert(listOrdersDisplayLogicSpy.displayFetchedOrdersCalled, "Presenting fetched orders should ask view controller to display them")
     }
 }
