@@ -47,8 +47,8 @@ class ListOrdersPresenterTests: XCTestCase
         
         var viewModel: ListOrders.FetchOrders.ViewModel!
         
-        func displaySomething(viewModel: ListOrders.FetchOrders.ViewModel)
-        {
+        func displayFetchedOrders(viewModel: ListOrders.FetchOrders.ViewModel) {
+
             displayFetchedOrdersCalled = true
             self.viewModel = viewModel
         }
