@@ -27,6 +27,15 @@ enum ListOrders
     }
     struct ViewModel
     {
+        struct DisplayedOrder
+        {
+            var id: String
+            var date: String
+            var email: String
+            var name: String
+            var total: String
+        }
+        var displayedOrders: [DisplayedOrder]
     }
   }
 }
