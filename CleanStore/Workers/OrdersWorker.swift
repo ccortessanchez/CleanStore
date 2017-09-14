@@ -22,6 +22,8 @@ class OrdersWorker {
     }
     
     func fetchOrders(completionHandler: ([Order]) -> Void) {
-        completionHandler([])
+        ordersStore.fetchOrders { (orders: [Order]) -> Void in
+            completionHandler(orders)
+        }
     }
 }

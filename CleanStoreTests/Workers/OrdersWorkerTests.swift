@@ -28,16 +28,34 @@ class OrdersWorkerTests: XCTestCase {
         sut = OrdersWorker(ordersStore: OrdersMemStoreSpy())
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: Test doubles
+    
+    class OrdersMemStoreSpy: OrdersMemStore {
+        var fetchedOrdersCalled = false
+        
+        override func fetchOrders(completionHandler: ([Order]) -> Void) {
+            fetchedOrdersCalled = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            }
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    //MARK: Tests
+    
+    func testFetchOrdersShouldReturnListOfOrders() {
+        //Given
+        let ordersMemStoreSpy = sut.ordersStore as! OrdersMemStoreSpy
+        
+        //When
+        let expect = expectation(description: "Wait for fetchOrders() to return")
+        sut.fetchOrders { (orders: [Order]) -> Void in
+            expect.fulfill()
         }
+        
+        //Then
+        XCTAssert(ordersMemStoreSpy.fetchedOrdersCalled, "Calling fetchOrders() should ask the data store for a list of orders")
+        waitForExpectations(timeout: 1.1)
+        XCTAssert(true, "Calling fetchOrders() should result in the completion handler being called with the fetched orders result")
     }
     
 }
