@@ -15,78 +15,87 @@ import XCTest
 
 class ListOrdersViewControllerTests: XCTestCase
 {
-  // MARK: Subject under test
-  
-  var sut: ListOrdersViewController!
-  var window: UIWindow!
-  
-  // MARK: Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    window = UIWindow()
-    setupListOrdersViewController()
-  }
-  
-  override func tearDown()
-  {
-    window = nil
-    super.tearDown()
-  }
-  
-  // MARK: Test setup
-  
-  func setupListOrdersViewController()
-  {
-    let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateViewController(withIdentifier: "ListOrdersViewController") as! ListOrdersViewController
-  }
-  
-  func loadView()
-  {
-    window.addSubview(sut.view)
-    RunLoop.current.run(until: Date())
-  }
-  
-  // MARK: Test doubles
-  
-  class ListOrdersBusinessLogicSpy: ListOrdersBusinessLogic
-  {
-    var fetchOrdersCalled = false
+    // MARK: Subject under test
     
-    func fetchOrders(request: ListOrders.FetchOrders.Request)
+    var sut: ListOrdersViewController!
+    var window: UIWindow!
+    
+    // MARK: Test lifecycle
+    
+    override func setUp()
     {
-      fetchOrdersCalled = true
+        super.setUp()
+        window = UIWindow()
+        setupListOrdersViewController()
     }
-  }
-  
-  // MARK: Tests
-  
-  func testShouldFetchOrdersWhenViewIsLoaded()
-  {
-    // Given
-    let listOrdersBussinessLogicSpy = ListOrdersBusinessLogicSpy()
-    sut.interactor = listOrdersBussinessLogicSpy
     
-    // When
-    loadView()
+    override func tearDown()
+    {
+        window = nil
+        super.tearDown()
+    }
     
-    // Then
-    XCTAssertTrue(listOrdersBussinessLogicSpy.fetchOrdersCalled, "Should fetch orders when the view is loaded")
-  }
-  
-  func testDisplaySomething()
-  {
-    // Given
-    //let viewModel = ListOrders.Something.ViewModel()
+    // MARK: Test setup
     
-    // When
-    //loadView()
-    //sut.displaySomething(viewModel: viewModel)
+    func setupListOrdersViewController()
+    {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        sut = storyboard.instantiateViewController(withIdentifier: "ListOrdersViewController") as! ListOrdersViewController
+    }
     
-    // Then
-    //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
-  }
+    func loadView()
+    {
+        window.addSubview(sut.view)
+        RunLoop.current.run(until: Date())
+    }
+    
+    // MARK: Test doubles
+    
+    class ListOrdersBusinessLogicSpy: ListOrdersBusinessLogic
+    {
+        var fetchOrdersCalled = false
+        
+        func fetchOrders(request: ListOrders.FetchOrders.Request)
+        {
+            fetchOrdersCalled = true
+        }
+    }
+    
+    class TableViewSpy: UITableView {
+        
+        var reloadDataCalled = false
+        
+        override func reloadData() {
+            reloadDataCalled = true
+        }
+    }
+    
+    // MARK: Tests
+    
+    func testShouldFetchOrdersWhenViewIsLoaded()
+    {
+        // Given
+        let listOrdersBussinessLogicSpy = ListOrdersBusinessLogicSpy()
+        sut.interactor = listOrdersBussinessLogicSpy
+        
+        // When
+        loadView()
+        
+        // Then
+        XCTAssertTrue(listOrdersBussinessLogicSpy.fetchOrdersCalled, "Should fetch orders when the view is loaded")
+    }
+    
+    func testDisplaySomething()
+    {
+        // Given
+        //let viewModel = ListOrders.Something.ViewModel()
+        
+        // When
+        //loadView()
+        //sut.displaySomething(viewModel: viewModel)
+        
+        // Then
+        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
+    }
 }
