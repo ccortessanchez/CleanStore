@@ -124,4 +124,19 @@ class ListOrdersViewControllerTests: XCTestCase
         // When
         XCTAssertEqual(numberOfRows, testDisplayedOrders.count, "The number of table view rows should equal the number of orders to display")
     }
+    
+    func testShouldConfigureTableViewCellToDisplayOrder() {
+        // Given
+        let tableView = sut.tableView
+        let testDisplayedOrders = [ListOrders.FetchOrders.ViewModel.DisplayedOrder(id: "abc123", date: "6/29/07", email: "amy.apple@clean-swift.com", name: "Amy Apple", total: "$1.23")]
+        sut.displayedOrders = testDisplayedOrders
+        
+        // Then
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        
+        // When
+        XCTAssertEqual(cell.textLabel?.text, "6/29/07", "A properly configured table view cell should display the order date")
+        XCTAssertEqual(cell.detailTextLabel?.text, "$1.23", "A properly configured table view cell should display the order total")
+    }
 }
