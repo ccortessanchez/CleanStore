@@ -79,6 +79,10 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedOrders.count
+    }
+    
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
