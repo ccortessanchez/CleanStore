@@ -100,4 +100,15 @@ class ListOrdersViewControllerTests: XCTestCase
         // Then
         XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
     }
+    
+    func testNumbersOfSectionsInTableViewShouldAlwaysBeOne() {
+        // Given
+        let tableView = sut.tableView
+        
+        // When
+        let numberOfSections = sut.numberOfSections(in: tableView!)
+        
+        // Then
+        XCTAssertEqual(numberOfSections, 1, "The number of table view sections should always be 1")
+    }
 }
