@@ -21,6 +21,7 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
 {
     var interactor: ListOrdersBusinessLogic?
     var router: (NSObjectProtocol & ListOrdersRoutingLogic & ListOrdersDataPassing)?
+    var displayedOrders: [ListOrders.FetchOrders.ViewModel.DisplayedOrder] = []
     
     // MARK: Object lifecycle
     
@@ -84,6 +85,7 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
     
     func displayFetchedOrders(viewModel: ListOrders.FetchOrders.ViewModel)
     {
-        //nameTextField.text = viewModel.name
+        displayedOrders = viewModel.displayedOrders
+        tableView.reloadData()
     }
 }
