@@ -133,7 +133,7 @@ class ListOrdersViewControllerTests: XCTestCase
         
         // Then
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        let cell = sut.tableView(tableView!, cellForRowAt: indexPath)
         
         // When
         XCTAssertEqual(cell.textLabel?.text, "6/29/07", "A properly configured table view cell should display the order date")

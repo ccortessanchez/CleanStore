@@ -83,6 +83,17 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
         return displayedOrders.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let displayedOrder = displayedOrders[indexPath.row]
+        var cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell")
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "OrderTableViewCell")
+        }
+        cell?.textLabel?.text = displayedOrder.date
+        cell?.detailTextLabel?.text = displayedOrder.total
+        return cell!
+    }
+    
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
