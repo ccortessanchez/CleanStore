@@ -111,4 +111,17 @@ class ListOrdersViewControllerTests: XCTestCase
         // Then
         XCTAssertEqual(numberOfSections, 1, "The number of table view sections should always be 1")
     }
+    
+    func testNumberOfRowsInAnySectionShouldEqualNumberOfOrdersToDisplay() {
+        // Given
+        let tableView = sut.tableView
+        let testDisplayedOrders = [ListOrders.FetchOrders.ViewModel.DisplayedOrder(id: "abc123", date: "6/29/07", email: "amy.apple@clean-swift.com", name: "Amy Apple", total: "$1.23")]
+        sut.displayedOrders = testDisplayedOrders
+        
+        // Then
+        let numberOfRows = sut.tableView(tableView!, numberOfRowsInSection: 0)
+        
+        // When
+        XCTAssertEqual(numberOfRows, testDisplayedOrders.count, "The number of table view rows should equal the number of orders to display")
+    }
 }
