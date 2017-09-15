@@ -73,6 +73,12 @@ class ListOrdersViewController: UITableViewController, ListOrdersDisplayLogic
         fetchOrdersOnLoad()
     }
     
+    // MARK: TableView 
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
